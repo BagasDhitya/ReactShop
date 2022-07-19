@@ -9,6 +9,8 @@ import {
 import React from 'react';
 import color from '../themes/color';
 
+import Star from '../assets/star_icon.svg';
+
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
 
@@ -24,6 +26,15 @@ const ProductCard = props => {
           {props.price}
         </Text>
       </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          marginLeft: windowWidth * 0.01,
+          marginVertical: windowHeight * 0.01,
+        }}>
+        <Star width={20} height={20} />
+        <Text style={{marginLeft: windowWidth * 0.02}}>{props.rate}</Text>
+      </View>
     </TouchableOpacity>
   );
 };
@@ -33,7 +44,7 @@ export default ProductCard;
 const styles = StyleSheet.create({
   container: {
     width: windowWidth * 0.4,
-    height: windowHeight * 0.5,
+    height: windowHeight * 0.53,
     borderWidth: 1,
     borderRadius: 5,
     borderColor: color.blueAqua,

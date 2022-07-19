@@ -80,6 +80,7 @@ const Home = () => {
                     image={{uri: item.image}}
                     name={item.title}
                     price={'$ ' + item.price}
+                    rate={item.rating.rate}
                   />
                 );
               })
@@ -113,6 +114,7 @@ const Home = () => {
                     image={{uri: item.image}}
                     name={item.title}
                     price={'$ ' + item.price}
+                    rate={item.rating.rate}
                   />
                 );
               })
