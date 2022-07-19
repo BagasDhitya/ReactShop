@@ -6,12 +6,12 @@ import {
   SafeAreaView,
   Dimensions,
   ActivityIndicator,
+  Image,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import color from '../themes/color';
 import ProductCard from '../components/ProductCard';
 import axios from 'axios';
-import ImageSlider from '../components/ImageSlider';
 
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
@@ -25,11 +25,19 @@ const Home = () => {
   const [jewelery, setJewelerys] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const banners = [
-    require('../assets/banners/1.png'),
-    require('../assets/banners/2.png'),
-    require('../assets/banners/3.png'),
-    require('../assets/banners/4.png'),
+  const data = [
+    {
+      banner: require('../assets/banners/1.png'),
+    },
+    {
+      banner: require('../assets/banners/2.png'),
+    },
+    {
+      banner: require('../assets/banners/3.png'),
+    },
+    {
+      banner: require('../assets/banners/4.png'),
+    },
   ];
 
   async function getElectronics() {
@@ -69,8 +77,16 @@ const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <View>
-          <ImageSlider images={banners} sliderBoxHeight={200} />
+        <View style={{alignSelf: 'center', marginTop: windowHeight * 0.02}}>
+          <Text style={{fontSize: 18, color: color.blueAqua}}>React Shop</Text>
+        </View>
+        <View style={{marginTop: windowHeight * 0.03}}>
+          <ScrollView horizontal>
+            {data &&
+              data.map(item => {
+                return <Image source={item.banner} style={styles.image} />;
+              })}
+          </ScrollView>
         </View>
         <View style={{marginTop: windowHeight * 0.05}}>
           <Text
@@ -151,5 +167,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: color.white,
+  },
+  image: {
+    width: windowWidth * 1,
+    height: windowHeight * 0.15,
   },
 });
