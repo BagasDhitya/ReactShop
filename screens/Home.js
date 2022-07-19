@@ -78,7 +78,7 @@ const Home = () => {
                   <ProductCard
                     id={item.id}
                     image={{uri: item.image}}
-                    name={item.title}
+                    name={item.title.substr(0, 50) + '...'}
                     price={'$ ' + item.price}
                     rate={item.rating.rate}
                   />
@@ -112,7 +112,7 @@ const Home = () => {
                   <ProductCard
                     id={item.id}
                     image={{uri: item.image}}
-                    name={item.title}
+                    name={item.title.substr(0, 50) + '...'}
                     price={'$ ' + item.price}
                     rate={item.rating.rate}
                   />

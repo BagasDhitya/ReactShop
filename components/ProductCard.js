@@ -44,7 +44,7 @@ export default ProductCard;
 const styles = StyleSheet.create({
   container: {
     width: windowWidth * 0.4,
-    height: windowHeight * 0.53,
+    height: windowHeight * 0.43,
     borderWidth: 1,
     borderRadius: 5,
     borderColor: color.blueAqua,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     marginLeft: windowWidth * 0.03,
   },
   image: {
-    marginTop: windowHeight * 0.05,
+    marginTop: windowHeight * 0.02,
     width: windowWidth * 0.35,
     height: windowHeight * 0.22,
     alignSelf: 'center',
