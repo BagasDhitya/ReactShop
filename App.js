@@ -4,8 +4,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import Product from './screens/Product';
-import Home from './screens/Home';
+import RootNavigator from './navigator/RootNavigator';
 
 const Stack = createStackNavigator();
 
@@ -14,9 +13,8 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Product" component={Product} />
+        initialRouteName="RootNavigator">
+        <Stack.Screen name="RootNavigator" component={RootNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );
