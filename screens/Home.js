@@ -11,6 +11,7 @@ import React, {useState, useEffect} from 'react';
 import color from '../themes/color';
 import ProductCard from '../components/ProductCard';
 import axios from 'axios';
+import ImageSlider from '../components/ImageSlider';
 
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
@@ -23,6 +24,13 @@ const Home = () => {
   const [electronic, setElectronics] = useState([]);
   const [jewelery, setJewelerys] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const banners = [
+    require('../assets/banners/1.png'),
+    require('../assets/banners/2.png'),
+    require('../assets/banners/3.png'),
+    require('../assets/banners/4.png'),
+  ];
 
   async function getElectronics() {
     try {
@@ -61,6 +69,9 @@ const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
+        <View>
+          <ImageSlider images={banners} sliderBoxHeight={200} />
+        </View>
         <View style={{marginTop: windowHeight * 0.05}}>
           <Text
             style={{
