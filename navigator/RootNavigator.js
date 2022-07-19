@@ -15,12 +15,12 @@ const RootNavigator = () => {
       <Tab.Screen
         name="HomeNavigator"
         component={HomeNavigator}
-        // options={{
-        //   title: 'Home',
-        //   tabBarIcon: ({focused}) => {
-        //     return focused && <HomeIcon />;
-        //   },
-        // }}
+        options={{
+          title: 'Home',
+          //   tabBarIcon: ({focused}) => {
+          //     return focused && <HomeIcon />;
+          //   },
+        }}
       />
       <Tab.Screen name="Transaction" component={Transaction} />
       <Tab.Screen name="Profile" component={Profile} />
