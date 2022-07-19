@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   Dimensions,
   ActivityIndicator,
+  Image,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import color from '../themes/color';
@@ -23,6 +24,21 @@ const Home = () => {
   const [electronic, setElectronics] = useState([]);
   const [jewelery, setJewelerys] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const data = [
+    {
+      banner: require('../assets/banners/1.png'),
+    },
+    {
+      banner: require('../assets/banners/2.png'),
+    },
+    {
+      banner: require('../assets/banners/3.png'),
+    },
+    {
+      banner: require('../assets/banners/4.png'),
+    },
+  ];
 
   async function getElectronics() {
     try {
@@ -61,6 +77,17 @@ const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
+        <View style={{alignSelf: 'center', marginTop: windowHeight * 0.02}}>
+          <Text style={{fontSize: 18, color: color.blueAqua}}>React Shop</Text>
+        </View>
+        <View style={{marginTop: windowHeight * 0.03}}>
+          <ScrollView horizontal>
+            {data &&
+              data.map(item => {
+                return <Image source={item.banner} style={styles.image} />;
+              })}
+          </ScrollView>
+        </View>
         <View style={{marginTop: windowHeight * 0.05}}>
           <Text
             style={{
@@ -140,5 +167,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: color.white,
+  },
+  image: {
+    width: windowWidth * 1,
+    height: windowHeight * 0.15,
   },
 });
