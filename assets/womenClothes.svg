@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    id="svg5042"
+    sodipodi:docname="Novo documento 23"
+    viewBox="0 0 372.26 788.89"
+    version="1.1"
+    inkscape:version="0.47 r22583"
+  >
+  <sodipodi:namedview
+      id="base"
+      bordercolor="#666666"
+      inkscape:pageshadow="2"
+      inkscape:window-y="-8"
+      pagecolor="#ffffff"
+      inkscape:window-height="962"
+      inkscape:window-maximized="1"
+      inkscape:zoom="0.7"
+      inkscape:window-x="-8"
+      showgrid="false"
+      borderopacity="1.0"
+      inkscape:current-layer="layer1"
+      inkscape:cx="28.955155"
+      inkscape:cy="430.43552"
+      inkscape:window-width="1280"
+      inkscape:pageopacity="0.0"
+      inkscape:document-units="px"
+  />
+  <g
+      id="layer1"
+      inkscape:label="Camada 1"
+      inkscape:groupmode="layer"
+      transform="translate(-148.55 -45.566)"
+    >
+    <path
+        id="path5066"
+        sodipodi:nodetypes="csssszscscsccsssszsssssscsz"
+        style="stroke:#000000;stroke-width:1px;fill:#000000"
+        d="m149.16 800.57c1.0642-10.237 19.105-147.75 17.98-229.34-0.36461-26.435 9.5384-50.739 15.696-75.835 6.1843-25.204 24.505-47.046 28.801-72.236 3.7959-22.258 3.3739-45.206-1.1345-67.843-8.637-43.368-13.551-104.02-17.649-131.52-4.0973-27.501-8.7599-22.425-5.8179-32.428 5.5882-19.002 16.847-34.995 18.287-56.412 5.559-19.532 4.5588-39.717 1.6268-59.623-1.181-8.0178-9.9669-23.194-0.69484-26.448 10.159-4.575 20.208-4.9947 20.703 9.746 0.54997 16.38-1.7068 37.227 6.8886 49.243 56.553 42.304 153.45 33.638 215.62 11.44 10.411-22.129 7.3221-53.228 23.279-71.039 4.8767-5.4435 24.33 1.44 17.893 14.845-8.097 16.863-14.926 36.079-16.184 54.812-1.9887 29.613 22.407 52.896 32.636 79.34 7.4543 19.271-7.9315 40.955-9.1855 68.381s-9.6535 63.173-11.284 95.225c-1.4168 27.844-2.2957 56.163 1.7064 83.557 5.9188 40.513 23.828 78.56 29.108 119.52 4.3694 33.893 2.3424 68.162 2.7293 102.23 0.57961 51.032-4.6123 102.11-12.373 152.43-2.078 13.474-4.4824 16.808-18.413 14.825-48.146-6.8543-96.833-13.283-145.71-15.484-61.591-4.3428-123.48-3.7325-185.19-3.0852-3.7804 0.0396-10.38-4.0505-9.316-14.287z"
+    />
+  </g
+  >
+  <metadata
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+        <dc:title
+          >Dress silhouette</dc:title
+        >
+        <dc:date
+          >2010-04-13T01:07:19</dc:date
+        >
+        <dc:description
+          >A silhouette of a dress.</dc:description
+        >
+        <dc:source
+          >https://openclipart.org/detail/46507/dress-silhouette-by-laobc</dc:source
+        >
+        <dc:creator
+          >
+          <cc:Agent
+            >
+            <dc:title
+              >laobc</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:creator
+        >
+        <dc:subject
+          >
+          <rdf:Bag
+            >
+            <rdf:li
+              >dress</rdf:li
+            >
+            <rdf:li
+              >silhouette</rdf:li
+            >
+          </rdf:Bag
+          >
+        </dc:subject
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>

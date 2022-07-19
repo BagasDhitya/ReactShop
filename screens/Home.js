@@ -11,6 +11,7 @@ import {
 import React, {useState, useEffect} from 'react';
 import color from '../themes/color';
 import ProductCard from '../components/ProductCard';
+import Menu from '../components/Menu';
 import axios from 'axios';
 
 const windowHeight = Dimensions.get('window').height;
@@ -88,7 +89,10 @@ const Home = () => {
               })}
           </ScrollView>
         </View>
-        <View style={{marginTop: windowHeight * 0.05}}>
+        <View style={{alignSelf: 'center', marginTop: windowHeight * 0.02}}>
+          <Menu />
+        </View>
+        <View style={{marginTop: windowHeight * 0.1}}>
           <Text
             style={{
               marginLeft: windowWidth * 0.03,
