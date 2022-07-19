@@ -27,7 +27,12 @@ const Home = () => {
   async function getElectronics() {
     try {
       const response = await axios.get(GET_ELECTRONICS);
-      setElectronics(response.data);
+      if (electronic === []) {
+        setLoading(false);
+      } else {
+        setLoading(true);
+        setElectronics(response.data);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -36,7 +41,12 @@ const Home = () => {
   async function getJewelerys() {
     try {
       const response = await axios.get(GET_JEWELERYS);
-      setJewelerys(response.data);
+      if (jewelery === []) {
+        setLoading(false);
+      } else {
+        setLoading(true);
+        setJewelerys(response.data);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -45,6 +55,7 @@ const Home = () => {
   useEffect(() => {
     getElectronics();
     getJewelerys();
+    setLoading(false);
   }, []);
 
   return (
@@ -61,16 +72,26 @@ const Home = () => {
             Electronics
           </Text>
           <ScrollView horizontal>
-            {electronic &&
+            {electronic && loading === true ? (
               electronic.map(item => {
                 return (
                   <ProductCard
+                    id={item.id}
                     image={{uri: item.image}}
                     name={item.title}
                     price={'$ ' + item.price}
                   />
                 );
-              })}
+              })
+            ) : (
+              <View
+                style={{
+                  marginHorizontal: windowWidth * 0.45,
+                  marginTop: windowHeight * 0.05,
+                }}>
+                <ActivityIndicator size={30} color={color.redMaroon} />
+              </View>
+            )}
           </ScrollView>
         </View>
         <View style={{marginTop: windowHeight * 0.05}}>
@@ -84,16 +105,26 @@ const Home = () => {
             Jewelerys
           </Text>
           <ScrollView horizontal>
-            {jewelery &&
+            {jewelery && loading === true ? (
               jewelery.map(item => {
                 return (
                   <ProductCard
+                    id={item.id}
                     image={{uri: item.image}}
                     name={item.title}
                     price={'$ ' + item.price}
                   />
                 );
-              })}
+              })
+            ) : (
+              <View
+                style={{
+                  marginHorizontal: windowWidth * 0.45,
+                  marginTop: windowHeight * 0.05,
+                }}>
+                <ActivityIndicator size={30} color={color.redMaroon} />
+              </View>
+            )}
           </ScrollView>
         </View>
       </ScrollView>
