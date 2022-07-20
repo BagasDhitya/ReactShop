@@ -17,7 +17,7 @@ import axios from 'axios';
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
 
-const Home = () => {
+const Home = ({navigation}) => {
   const GET_ELECTRONICS =
     'https://fakestoreapi.com/products/category/electronics';
   const GET_JEWELERYS = 'https://fakestoreapi.com/products/category/jewelery';
@@ -107,6 +107,11 @@ const Home = () => {
               electronic.map(item => {
                 return (
                   <ProductCard
+                    onPress={() =>
+                      navigation.navigate('Product', {
+                        id: item.id,
+                      })
+                    }
                     id={item.id}
                     image={{uri: item.image}}
                     name={item.title.substr(0, 50) + '...'}
@@ -141,6 +146,11 @@ const Home = () => {
               jewelery.map(item => {
                 return (
                   <ProductCard
+                    onPress={() =>
+                      navigation.navigate('Product', {
+                        id: item.id,
+                      })
+                    }
                     id={item.id}
                     image={{uri: item.image}}
                     name={item.title.substr(0, 50) + '...'}
