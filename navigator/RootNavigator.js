@@ -4,6 +4,7 @@ import React from 'react';
 import HomeNavigator from './HomeNavigator';
 import Profile from '../screens/Profile';
 import Transaction from '../screens/Transaction';
+import Wishlist from '../screens/Wishlist';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
@@ -22,6 +23,7 @@ const RootNavigator = () => {
           //   },
         }}
       />
+      <Tab.Screen name="Wishlist" component={Wishlist} />
       <Tab.Screen name="Transaction" component={Transaction} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>

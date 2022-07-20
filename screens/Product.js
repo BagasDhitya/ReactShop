@@ -20,7 +20,7 @@ import Button from '../components/Button';
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
 
-const Product = ({route}) => {
+const Product = ({route, navigation}) => {
   let id = route.params?.id;
   let today = new Date();
 
@@ -58,8 +58,10 @@ const Product = ({route}) => {
         })
         .then(res => {
           setCart(res.data);
-          console.log('succes', res.data);
           Alert.alert('Successfully added!');
+          navigation.navigate('Wishlist', {
+            product: product,
+          });
         })
         .catch(error => {
           console.log(error);

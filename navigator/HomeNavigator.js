@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import Home from '../screens/Home';
 import Product from '../screens/Product';
+import Wishlist from '../screens/Wishlist';
 
 const Stack = createStackNavigator();
 
@@ -17,7 +18,14 @@ const HomeNavigator = () => {
         component={Product}
         options={{
           headerShown: true,
-
+          headerBackTitle: ' ',
+        }}
+      />
+      <Stack.Screen
+        name="Wishlist"
+        component={Wishlist}
+        options={{
+          headerShown: true,
           headerBackTitle: ' ',
         }}
       />
