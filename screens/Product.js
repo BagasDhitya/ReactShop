@@ -14,6 +14,7 @@ import color from '../themes/color';
 import axios from 'axios';
 
 import Star from '../assets/star_icon.svg';
+import Button from '../components/Button';
 
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
@@ -151,6 +152,9 @@ const Product = ({route}) => {
           </View>
         </View>
       </ScrollView>
+      <View style={{alignSelf: 'center', marginVertical: windowHeight * 0.01}}>
+        <Button title={'Add to Cart'} filled={count} />
+      </View>
     </SafeAreaView>
   );
 };
