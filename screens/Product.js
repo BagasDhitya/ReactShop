@@ -7,6 +7,7 @@ import {
   ActivityIndicator,
   ScrollView,
   Dimensions,
+  TextInput,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import color from '../themes/color';
@@ -21,6 +22,7 @@ const Product = ({route}) => {
   let id = route.params?.id;
 
   const [product, setProducts] = useState();
+  const [count, setCount] = useState();
 
   async function getProduct() {
     try {
@@ -35,6 +37,8 @@ const Product = ({route}) => {
   useEffect(() => {
     getProduct();
   }, []);
+
+  console.log('co', count);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -111,22 +115,40 @@ const Product = ({route}) => {
             {product?.description}
           </Text>
         </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            marginHorizontal: windowWidth * 0.04,
-            marginTop: windowHeight * 0.03,
-          }}>
-          <Text style={{fontSize: 16, fontWeight: 'bold'}}>Price</Text>
-          <Text
+        <View style={{flexDirection: 'row'}}>
+          <View
             style={{
-              marginTop: windowHeight * 0.04,
-              textAlign: 'justify',
-              position: 'absolute',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              marginHorizontal: windowWidth * 0.04,
+              marginTop: windowHeight * 0.03,
             }}>
-            ${product?.price}
-          </Text>
+            <Text style={{fontSize: 16, fontWeight: 'bold'}}>Price</Text>
+            <Text
+              style={{
+                marginTop: windowHeight * 0.04,
+                textAlign: 'justify',
+                position: 'absolute',
+              }}>
+              ${product?.price}
+            </Text>
+          </View>
+          <View
+            style={{
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              marginHorizontal: windowWidth * 0.39,
+              marginTop: windowHeight * 0.03,
+            }}>
+            <Text style={{fontSize: 16, fontWeight: 'bold'}}>Quantity</Text>
+            <View style={styles.quantity}>
+              <TextInput
+                style={{height: windowHeight * 0.04, alignSelf: 'center'}}
+                value={count}
+                onChangeText={count => setCount(count)}
+              />
+            </View>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -143,5 +165,13 @@ const styles = StyleSheet.create({
   image: {
     width: windowWidth * 1,
     height: windowHeight * 0.3,
+  },
+  quantity: {
+    marginTop: windowHeight * 0.01,
+    width: windowWidth * 0.13,
+    height: windowHeight * 0.04,
+    borderWidth: 0.5,
+    borderRadius: 5,
+    alignSelf: 'center',
   },
 });
