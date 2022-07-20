@@ -16,7 +16,10 @@ const windowWidth = Dimensions.get('window').width;
 
 const ProductCard = props => {
   return (
-    <TouchableOpacity style={styles.container} key={props.id}>
+    <TouchableOpacity
+      style={styles.container}
+      key={props.id}
+      onPress={props.onPress}>
       <Image style={styles.image} source={props.image} />
       <View style={styles.title}>
         <Text>{props.name}</Text>
