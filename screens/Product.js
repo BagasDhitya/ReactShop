@@ -8,6 +8,7 @@ import {
   ScrollView,
   Dimensions,
   TextInput,
+  Alert,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import color from '../themes/color';
@@ -21,15 +22,48 @@ const windowWidth = Dimensions.get('window').width;
 
 const Product = ({route}) => {
   let id = route.params?.id;
+  let today = new Date();
 
   const [product, setProducts] = useState();
   const [count, setCount] = useState();
+  const [cart, setCart] = useState([]);
 
   async function getProduct() {
     try {
       const res = await axios.get(`https://fakestoreapi.com/products/${id}`);
       setProducts(res.data);
       console.log(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function handleCart() {
+    try {
+      const res = await axios
+        .post(`https://fakestoreapi.com/carts`, {
+          userId: 2,
+          date:
+            today.getFullYear() +
+            '-' +
+            (today.getMonth() + 1) +
+            '-' +
+            today.getDate(),
+          products: [
+            {
+              productId: id,
+              quantity: count,
+            },
+          ],
+        })
+        .then(res => {
+          setCart(res.data);
+          console.log('succes', res.data);
+          Alert.alert('Successfully added!');
+        })
+        .catch(error => {
+          console.log(error);
+        });
     } catch (error) {
       console.log(error);
     }
@@ -153,7 +187,11 @@ const Product = ({route}) => {
         </View>
       </ScrollView>
       <View style={{alignSelf: 'center', marginVertical: windowHeight * 0.01}}>
-        <Button title={'Add to Cart'} filled={count} />
+        <Button
+          title={'Add to Cart'}
+          filled={count}
+          onPress={() => handleCart()}
+        />
       </View>
     </SafeAreaView>
   );
