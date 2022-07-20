@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import Home from '../screens/Home';
 import Product from '../screens/Product';
+import Wishlist from '../screens/Wishlist';
 
 const Stack = createStackNavigator();
 
@@ -12,7 +13,22 @@ const HomeNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Product" component={Product} />
+      <Stack.Screen
+        name="Product"
+        component={Product}
+        options={{
+          headerShown: true,
+          headerBackTitle: ' ',
+        }}
+      />
+      <Stack.Screen
+        name="Wishlist"
+        component={Wishlist}
+        options={{
+          headerShown: true,
+          headerBackTitle: ' ',
+        }}
+      />
     </Stack.Navigator>
   );
 };
