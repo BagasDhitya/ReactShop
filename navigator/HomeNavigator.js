@@ -12,7 +12,15 @@ const HomeNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Product" component={Product} />
+      <Stack.Screen
+        name="Product"
+        component={Product}
+        options={{
+          headerShown: true,
+
+          headerBackTitle: ' ',
+        }}
+      />
     </Stack.Navigator>
   );
 };
