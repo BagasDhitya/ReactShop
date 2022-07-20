@@ -25,7 +25,7 @@ const Product = ({route, navigation}) => {
   let today = new Date();
 
   const [product, setProducts] = useState();
-  const [count, setCount] = useState();
+  const [count, setCount] = useState(0);
   const [cart, setCart] = useState([]);
 
   async function getProduct() {
@@ -79,7 +79,10 @@ const Product = ({route, navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView
+        style={{
+          marginBottom: Platform.OS === 'ios' ? null : windowHeight * 0.02,
+        }}>
         <View>
           <Image style={styles.image} source={{uri: product?.image}} />
         </View>
@@ -143,12 +146,21 @@ const Product = ({route, navigation}) => {
           }}>
           <Text style={{fontSize: 16, fontWeight: 'bold'}}>Description</Text>
           <Text
-            style={{
-              marginRight: windowWidth * 0.1,
-              marginTop: windowHeight * 0.04,
-              right: windowWidth * 0.229,
-              textAlign: 'justify',
-            }}>
+            style={
+              Platform.OS === 'ios'
+                ? {
+                    marginRight: windowWidth * 0.1,
+                    marginTop: windowHeight * 0.04,
+                    right: windowWidth * 0.229,
+                    textAlign: 'justify',
+                  }
+                : {
+                    marginRight: windowWidth * 0.05,
+                    marginTop: windowHeight * 0.04,
+                    right: windowWidth * 0.21,
+                    textAlign: 'justify',
+                  }
+            }>
             {product?.description}
           </Text>
         </View>
@@ -180,7 +192,16 @@ const Product = ({route, navigation}) => {
             <Text style={{fontSize: 16, fontWeight: 'bold'}}>Quantity</Text>
             <View style={styles.quantity}>
               <TextInput
-                style={{height: windowHeight * 0.04, alignSelf: 'center'}}
+                style={
+                  Platform.OS === 'ios'
+                    ? {height: windowHeight * 0.04, alignSelf: 'center'}
+                    : {
+                        height: windowHeight * 0.05,
+                        alignSelf: 'center',
+                        left: windowHeight * 0.005,
+                        bottom: windowHeight * 0.005,
+                      }
+                }
                 value={count}
                 onChangeText={count => setCount(count)}
               />
