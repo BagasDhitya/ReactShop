@@ -11,7 +11,9 @@ import {
   Alert,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import color from '../themes/color';
+import {getProducts, addProduct, removeProduct} from '../redux/action';
 import axios from 'axios';
 
 import Star from '../assets/star_icon.svg';
@@ -25,8 +27,10 @@ const Product = ({route, navigation}) => {
   let today = new Date();
 
   const [product, setProducts] = useState();
+  const [item, setItem] = useState();
   const [count, setCount] = useState(0);
   const [cart, setCart] = useState([]);
+  const dispatch = useDispatch();
 
   async function getProduct() {
     try {
@@ -37,6 +41,8 @@ const Product = ({route, navigation}) => {
       console.log(error);
     }
   }
+
+  const addToCart = selectedItem => dispatch(addProduct(selectedItem));
 
   async function handleCart() {
     try {
@@ -58,6 +64,14 @@ const Product = ({route, navigation}) => {
         })
         .then(res => {
           setCart(res.data);
+          const selectedItem = {
+            id: id,
+            product: product,
+            total: count,
+          };
+          setItem(selectedItem);
+          addToCart(selectedItem);
+          console.log('added', selectedItem);
           Alert.alert('Successfully added!');
           navigation.navigate('Wishlist', {
             product: product,

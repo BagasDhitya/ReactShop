@@ -21,4 +21,3 @@ export const removeProduct = product => dispatch => {
     payload: product,
   });
 };
-Footer;
