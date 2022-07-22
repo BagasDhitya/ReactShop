@@ -6,6 +6,8 @@ import {
   SafeAreaView,
   Dimensions,
   Text,
+  TouchableOpacity,
+  Image,
 } from 'react-native';
 import Button from '../components/Button';
 import color from '../themes/color';
@@ -21,8 +23,12 @@ const Register = () => {
   return (
     <>
       <SafeAreaView style={styles.container}>
-        <View style={{alignSelf: 'center', marginVertical: windowHeight * 0.2}}>
-          <Text>Register Here</Text>
+        <View
+          style={{alignSelf: 'center', marginVertical: windowHeight * 0.15}}>
+          <Image
+            source={require('../assets/rn_logo.png')}
+            style={{width: windowWidth * 0.25, height: windowHeight * 0.1}}
+          />
         </View>
         <View style={{alignSelf: 'center'}}>
           <TextInput
@@ -47,8 +53,15 @@ const Register = () => {
             onChangeText={text => setPassword(text)}
           />
         </View>
-        <View
-          style={{alignSelf: 'center', marginVertical: windowHeight * 0.15}}>
+        <View style={{alignSelf: 'center', marginTop: windowHeight * 0.02}}>
+          <TouchableOpacity>
+            <Text
+              style={{textDecorationLine: 'underline', color: color.blueAqua}}>
+              Already have an account? Sign in here
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={{alignSelf: 'center', marginVertical: windowHeight * 0.1}}>
           <Button
             title={'Register'}
             filled={name && email && password ? true : false}
