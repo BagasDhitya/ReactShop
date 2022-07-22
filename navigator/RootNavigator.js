@@ -9,6 +9,16 @@ import Wishlist from '../screens/Wishlist';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import color from '../themes/color';
 
+import HomeUnfocused from '../assets/unfocused/home.svg';
+import ListUnfocused from '../assets/unfocused/list.svg';
+import TransactionUnfocused from '../assets/unfocused/transaction.svg';
+import ProfileUnfocused from '../assets/unfocused/profile.svg';
+
+import HomeFocused from '../assets/focused/home.svg';
+import ListFocused from '../assets/focused/list.svg';
+import TransactionFocused from '../assets/focused/transaction.svg';
+import ProfileFocused from '../assets/focused/profile.svg';
+
 const Tab = createBottomTabNavigator();
 
 const RootNavigator = () => {
@@ -25,9 +35,9 @@ const RootNavigator = () => {
           title: 'Home',
           tabBarIcon: ({focused}) => {
             return focused ? (
-              <Image source={require('../assets/focused/home.png')} />
+              <HomeFocused width={30} height={30} />
             ) : (
-              <Image source={require('../assets/unfocused/home.png')} />
+              <HomeUnfocused width={30} height={30} />
             );
           },
         }}
@@ -38,9 +48,9 @@ const RootNavigator = () => {
         options={{
           tabBarIcon: ({focused}) => {
             return focused ? (
-              <Image source={require('../assets/focused/list.png')} />
+              <ListFocused width={30} height={30} />
             ) : (
-              <Image source={require('../assets/unfocused/list.png')} />
+              <ListUnfocused width={30} height={30} />
             );
           },
         }}
@@ -51,9 +61,9 @@ const RootNavigator = () => {
         options={{
           tabBarIcon: ({focused}) => {
             return focused ? (
-              <Image source={require('../assets/focused/transaction.png')} />
+              <TransactionFocused width={30} height={30} />
             ) : (
-              <Image source={require('../assets/unfocused/transaction.png')} />
+              <TransactionUnfocused width={30} height={30} />
             );
           },
         }}
@@ -64,9 +74,9 @@ const RootNavigator = () => {
         options={{
           tabBarIcon: ({focused}) => {
             return focused ? (
-              <Image source={require('../assets/focused/profile.png')} />
+              <ProfileFocused width={30} height={30} />
             ) : (
-              <Image source={require('../assets/unfocused/profile.png')} />
+              <ProfileUnfocused width={30} height={30} />
             );
           },
         }}
