@@ -6,7 +6,7 @@ import HeaderProfile from '../components/HeaderProfile';
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={{marginVertical: windowHeight * 0.03, alignSelf: 'center'}}>
@@ -14,6 +14,7 @@ const Profile = () => {
           image={{
             uri: `https://w7.pngwing.com/pngs/247/564/png-transparent-computer-icons-user-profile-user-avatar-blue-heroes-electric-blue.png`,
           }}
+          register={() => navigation.navigate('Register')}
         />
       </View>
     </SafeAreaView>

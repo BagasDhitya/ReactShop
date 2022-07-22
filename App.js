@@ -9,6 +9,7 @@ import {store, persistor} from './redux/store';
 import {PersistGate} from 'redux-persist/integration/react';
 
 import RootNavigator from './navigator/RootNavigator';
+import Register from './screens/Register';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ const App = () => {
             screenOptions={{headerShown: false}}
             initialRouteName="RootNavigator">
             <Stack.Screen name="RootNavigator" component={RootNavigator} />
+            <Stack.Screen name="Register" component={Register} />
           </Stack.Navigator>
         </NavigationContainer>
       </PersistGate>

@@ -1,14 +1,78 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {FC, ReactElement, useState} from 'react';
+import {
+  StyleSheet,
+  TextInput,
+  View,
+  SafeAreaView,
+  Dimensions,
+  Text,
+} from 'react-native';
+import Button from '../components/Button';
+import color from '../themes/color';
+
+const windowHeight = Dimensions.get('window').height;
+const windowWidth = Dimensions.get('window').width;
 
 const Register = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
-    <View>
-      <Text>Register</Text>
-    </View>
+    <>
+      <SafeAreaView style={styles.container}>
+        <View style={{alignSelf: 'center', marginVertical: windowHeight * 0.2}}>
+          <Text>Register Here</Text>
+        </View>
+        <View style={{alignSelf: 'center'}}>
+          <TextInput
+            style={styles.input}
+            value={name}
+            placeholder={'Full Name'}
+            onChangeText={text => setName(text)}
+            autoCapitalize={true}
+          />
+          <TextInput
+            style={styles.input}
+            value={email}
+            placeholder={'Email'}
+            onChangeText={text => setEmail(text)}
+            autoCapitalize={true}
+          />
+          <TextInput
+            style={styles.input}
+            value={password}
+            placeholder={'Password'}
+            secureTextEntry
+            onChangeText={text => setPassword(text)}
+          />
+        </View>
+        <View
+          style={{alignSelf: 'center', marginVertical: windowHeight * 0.15}}>
+          <Button
+            title={'Register'}
+            filled={name && email && password ? true : false}
+          />
+        </View>
+      </SafeAreaView>
+    </>
   );
 };
 
-export default Register;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: color.white,
+  },
+  input: {
+    paddingLeft: windowWidth * 0.03,
+    width: windowWidth * 0.9,
+    height: windowHeight * 0.06,
+    marginVertical: windowHeight * 0.015,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: color.blueAqua,
+  },
+});
 
-const styles = StyleSheet.create({});
+export default Register;
