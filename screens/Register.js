@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, {FC, ReactElement, useState} from 'react';
 import {
   StyleSheet,
@@ -8,6 +9,7 @@ import {
   Text,
   TouchableOpacity,
   Image,
+  Alert,
 } from 'react-native';
 import Button from '../components/Button';
 import color from '../themes/color';
@@ -18,13 +20,16 @@ const windowWidth = Dimensions.get('window').width;
 const Register = ({navigation}) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
   const [password, setPassword] = useState('');
+
+  async function handleRegister() {}
 
   return (
     <>
       <SafeAreaView style={styles.container}>
         <View
-          style={{alignSelf: 'center', marginVertical: windowHeight * 0.15}}>
+          style={{alignSelf: 'center', marginVertical: windowHeight * 0.11}}>
           <Image
             source={require('../assets/rn_logo.png')}
             style={{width: windowWidth * 0.25, height: windowHeight * 0.1}}
@@ -36,6 +41,13 @@ const Register = ({navigation}) => {
             value={name}
             placeholder={'Full Name'}
             onChangeText={text => setName(text)}
+            autoCapitalize={true}
+          />
+          <TextInput
+            style={styles.input}
+            value={address}
+            placeholder={'Address'}
+            onChangeText={text => setAddress(text)}
             autoCapitalize={true}
           />
           <TextInput
@@ -65,6 +77,7 @@ const Register = ({navigation}) => {
           <Button
             title={'Register'}
             filled={name && email && password ? true : false}
+            onPress={() => handleRegister()}
           />
         </View>
       </SafeAreaView>
