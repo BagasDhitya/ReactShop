@@ -53,6 +53,7 @@ const HeaderProfile = props => {
                   fontWeight: 'bold',
                   fontStyle: 'normal',
                   textDecorationLine: 'underline',
+                  color: color.blueAqua,
                 }}>
                 Register/Login? Click here!
               </Text>
