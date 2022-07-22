@@ -10,9 +10,11 @@ import {
   TouchableOpacity,
   Image,
   Alert,
+  Modal,
 } from 'react-native';
 import Button from '../components/Button';
 import color from '../themes/color';
+import Cross from '../assets/cross.svg';
 
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
@@ -22,65 +24,82 @@ const Register = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
   const [password, setPassword] = useState('');
+  const [visible, setVisible] = useState(true);
 
   async function handleRegister() {}
 
+  function next() {
+    setVisible(false);
+    navigation.navigate('Login');
+  }
+
   return (
     <>
-      <SafeAreaView style={styles.container}>
-        <View
-          style={{alignSelf: 'center', marginVertical: windowHeight * 0.11}}>
-          <Image
-            source={require('../assets/rn_logo.png')}
-            style={{width: windowWidth * 0.25, height: windowHeight * 0.1}}
-          />
-        </View>
-        <View style={{alignSelf: 'center'}}>
-          <TextInput
-            style={styles.input}
-            value={name}
-            placeholder={'Full Name'}
-            onChangeText={text => setName(text)}
-            autoCapitalize={true}
-          />
-          <TextInput
-            style={styles.input}
-            value={address}
-            placeholder={'Address'}
-            onChangeText={text => setAddress(text)}
-            autoCapitalize={true}
-          />
-          <TextInput
-            style={styles.input}
-            value={email}
-            placeholder={'Email'}
-            onChangeText={text => setEmail(text)}
-            autoCapitalize={true}
-          />
-          <TextInput
-            style={styles.input}
-            value={password}
-            placeholder={'Password'}
-            secureTextEntry
-            onChangeText={text => setPassword(text)}
-          />
-        </View>
-        <View style={{alignSelf: 'center', marginTop: windowHeight * 0.02}}>
-          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-            <Text
-              style={{textDecorationLine: 'underline', color: color.blueAqua}}>
-              Already have an account? Sign in here
-            </Text>
+      <Modal animationType="slide" visible={visible}>
+        <SafeAreaView style={styles.container}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('RootNavigator')}
+            style={{alignSelf: 'flex-end', marginRight: windowWidth * 0.05}}>
+            <Cross width={30} height={30} />
           </TouchableOpacity>
-        </View>
-        <View style={{alignSelf: 'center', marginVertical: windowHeight * 0.1}}>
-          <Button
-            title={'Register'}
-            filled={name && email && password ? true : false}
-            onPress={() => handleRegister()}
-          />
-        </View>
-      </SafeAreaView>
+          <View
+            style={{alignSelf: 'center', marginVertical: windowHeight * 0.1}}>
+            <Image
+              source={require('../assets/rn_logo.png')}
+              style={{width: windowWidth * 0.25, height: windowHeight * 0.1}}
+            />
+          </View>
+          <View style={{alignSelf: 'center'}}>
+            <TextInput
+              style={styles.input}
+              value={name}
+              placeholder={'Full Name'}
+              onChangeText={text => setName(text)}
+              autoCapitalize={true}
+            />
+            <TextInput
+              style={styles.input}
+              value={address}
+              placeholder={'Address'}
+              onChangeText={text => setAddress(text)}
+              autoCapitalize={true}
+            />
+            <TextInput
+              style={styles.input}
+              value={email}
+              placeholder={'Email'}
+              onChangeText={text => setEmail(text)}
+              autoCapitalize={true}
+            />
+            <TextInput
+              style={styles.input}
+              value={password}
+              placeholder={'Password'}
+              secureTextEntry
+              onChangeText={text => setPassword(text)}
+            />
+          </View>
+          <View style={{alignSelf: 'center', marginTop: windowHeight * 0.02}}>
+            <TouchableOpacity onPress={() => next()}>
+              <Text
+                style={{
+                  textDecorationLine: 'underline',
+                  color: color.blueAqua,
+                }}>
+                Already have an account? Sign in here
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{alignSelf: 'center', marginVertical: windowHeight * 0.1}}>
+            <Button
+              title={'Register'}
+              filled={name && email && password ? true : false}
+              onPress={() => handleRegister()}
+            />
+          </View>
+        </SafeAreaView>
+      </Modal>
     </>
   );
 };
