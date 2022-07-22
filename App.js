@@ -10,6 +10,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 
 import RootNavigator from './navigator/RootNavigator';
 import Register from './screens/Register';
+import Login from './screens/Login';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ const App = () => {
             initialRouteName="RootNavigator">
             <Stack.Screen name="RootNavigator" component={RootNavigator} />
             <Stack.Screen name="Register" component={Register} />
+            <Stack.Screen name="Login" component={Login} />
           </Stack.Navigator>
         </NavigationContainer>
       </PersistGate>

@@ -15,7 +15,7 @@ import color from '../themes/color';
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
 
-const Register = () => {
+const Register = ({navigation}) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -54,7 +54,7 @@ const Register = () => {
           />
         </View>
         <View style={{alignSelf: 'center', marginTop: windowHeight * 0.02}}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
             <Text
               style={{textDecorationLine: 'underline', color: color.blueAqua}}>
               Already have an account? Sign in here
