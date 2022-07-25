@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "818493144060",
+    "project_id": "react-shop-ce422",
+    "storage_bucket": "react-shop-ce422.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818493144060:android:0f6c2a7bb7d44317a51079",
+        "android_client_info": {
+          "package_name": "com.reactshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818493144060-1eapip2r50ndffpcb4ftvpsk9q5n693h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reactshop",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "818493144060-o5hoioejspsc608b6bnndnndb0o3grtj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIEjZqfrtkuB_KG3_NIveNuDIeLzJhs-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818493144060-o5hoioejspsc608b6bnndnndb0o3grtj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
